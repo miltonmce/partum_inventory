@@ -1,5 +1,5 @@
 from django import template
-from pis_product.models import StockIn,StockOut, Product
+from inventory.models import StockIn,StockOut, Product
 
 register = template.Library()
 
