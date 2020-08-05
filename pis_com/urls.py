@@ -1,12 +1,14 @@
 from django.urls import path, include,re_path
 
 
-from pis_com.views import HomePageView
-from pis_com.views import LoginView
-from pis_com.views import LogoutView
-from pis_com.views import (
-    CreateCustomer, CustomerTemplateView, CustomerUpdateView, CreateFeedBack)
-from pis_com.views import RegisterView, ReportsView
+from pis_com.views.com.home import HomePageView
+from pis_com.views.com.users.login import LoginView
+from pis_com.views.com.users.logout import LogoutView
+from pis_com.views.com.customer import (
+    CreateCustomer, CustomerTemplateView, CustomerUpdateView)
+from pis_com.views.com.create_feedback import CreateFeedBack
+from pis_com.views.com.users.register import RegisterView
+from pis_com.views.com.reports.reports import ReportsView
 
 urlpatterns = [
     re_path(r'^$', HomePageView.as_view(), name='index'),

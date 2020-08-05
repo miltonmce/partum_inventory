@@ -88,7 +88,7 @@ class WeeklySalesAPI(DailySalesAPI):
 
     def get(self, request, *args, **kwargs):
         sales = []
-        for week in xrange(1, 13):
+        for week in range(1, 13):
             sales_start_week = timezone.now() - relativedelta(weeks=week)
             sales_end_week = timezone.now() - relativedelta(weeks=week - 1)
 
