@@ -9,6 +9,9 @@ from .feedback import FeedBack
 from .user import UserProfile
 
 
+from .employee import Employee
+from .employeesalary import EmployeeSalary
+
 
 
 

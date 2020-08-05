@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.contrib import admin
 
-from pis_com.models import UserProfile
+from pis_com.models import UserProfile, Employee, EmployeeSalary
 from pis_com.models import Customer, FeedBack
 from pis_com.models import AdminConfiguration
 
@@ -38,10 +38,37 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_display = (
         '__unicode__', 'retailer','description','date'
     )
-
-
-
 admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(FeedBack, FeedbackAdmin)
 admin.site.register(AdminConfiguration)
+
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = (
+        '__unicode__', 'name', 'father_name', 'mobile', 'address','date_of_joining'
+    )
+    search_fields = (
+        'name', 'cnic',
+    )
+
+    @staticmethod
+    def name(obj):
+        return obj.name
+
+
+class EmployeeSalaryAdmin(admin.ModelAdmin):
+    list_display = (
+        '__unicode__', 'employee' ,'salary_amount', 'date'
+    )
+
+    @staticmethod
+    def employee(obj):
+        return obj.employee.name
+    search_fields = (
+         'date',
+    )
+
+
+
+admin.site.register(Employee, EmployeeAdmin)
+admin.site.register(EmployeeSalary, EmployeeSalaryAdmin)

@@ -14,7 +14,7 @@ from pis_sales.models import SalesHistory
 from pis_product.forms import PurchasedProductForm
 from pis_sales.forms import BillingForm
 from pis_product.forms import ExtraItemForm, StockOutForm
-from pis_com.forms import CustomerForm
+from pis_com.forms.customer.customer import CustomerForm
 from pis_ledger.models import Ledger
 from pis_ledger.forms import LedgerForm
 from django.db import transaction

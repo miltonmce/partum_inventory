@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'pis_product',
     'pis_sales',
     'pis_expense',
-    'pis_employees',
+    #'pis_employees',
     'pis_supplier',
 ]
 

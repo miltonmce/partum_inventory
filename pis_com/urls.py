@@ -10,6 +10,9 @@ from pis_com.views.com.create_feedback import CreateFeedBack
 from pis_com.views.com.users.register import RegisterView
 from pis_com.views.com.reports.reports import ReportsView
 
+
+#urls for employee views on pis_com
+from .views.employees import urlpatterns as employeeurls
 urlpatterns = [
     re_path(r'^$', HomePageView.as_view(), name='index'),
     re_path(r'^reports/$', ReportsView.as_view(), name='reports'),
@@ -24,4 +27,4 @@ urlpatterns = [
     re_path(r'^customers/$', CustomerUpdateView.as_view(), name='update_customer'),
     re_path(r'^customer/(?P<pk>\d+)/update$', RegisterView.as_view(), name='register'),
     re_path(r'^register/$', CreateFeedBack.as_view(), name='create_feedback'),
-]
+]+employeeurls

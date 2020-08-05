@@ -3,12 +3,12 @@
 {% block content %}
     <div class="col-md-6">
         <br>
-        <a href="{% url 'employee:employee_list' %}"><button type="button" id="empolyee" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Employee List</button></a>
+        <a href="{% url 'employee_list' %}"><button type="button" id="empolyee" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Employee List</button></a>
         <br><br><br>
         <div class="content-panel">
             <h3 class="text-center">{{ request.user.retailer_user.retailer.name }} Add Employee</h3>
             <div class="panel-body">
-                <form class="form-horizontal add-ledger-form" action="{% url 'employee:employee_salary' pk=employee.pk %}" method="post" autocomplete="off">
+                <form class="form-horizontal add-ledger-form" action="{% url 'employee_salary' pk=employee.pk %}" method="post" autocomplete="off">
                     <div class="form-group">
                         <div class="col-sm-12">
                             {% csrf_token %}

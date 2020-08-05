@@ -1,9 +1,10 @@
 from django.urls import re_path
 
-from pis_employees.views import (
-    AddNewEmployee, EmployeeListView,EmployeeDelete,EmployeeSalaryView,
-    EmployeeSalaryDetail
-)
+from .newemployee import AddNewEmployee
+from .listview import EmployeeListView
+from .deleteemployee import EmployeeDelete
+from.salary import EmployeeSalaryView
+from .salarydetail import EmployeeSalaryDetail
 
 urlpatterns = [
     re_path(r'^add/new/$', AddNewEmployee.as_view(), name='add_new_employee'),

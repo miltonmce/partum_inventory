@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.views.generic import FormView
 from django.urls import reverse
-from pis_com.forms import FeedBackForm
+from pis_com.forms.customer.feedback import FeedBackForm
 
 
 class CreateFeedBack(FormView):

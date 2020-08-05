@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView
 from django.urls import reverse
-from pis_com.forms import CustomerForm
+from pis_com.forms.customer.customer import CustomerForm
 from pis_com.models import Customer
 
 

@@ -8,7 +8,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 
 from pis_com.models import Customer
-from pis_com.forms import CustomerForm
+from pis_com.forms.customer.customer import CustomerForm
 from pis_ledger.forms import LedgerForm
 from  pis_ledger.forms import Ledger
 
