@@ -4,6 +4,7 @@ from django.contrib import admin
 from pis_com.models import UserProfile, Employee, EmployeeSalary
 from pis_com.models import Customer, FeedBack
 from pis_com.models import AdminConfiguration
+from pis_com.models import ExtraExpense
 
 
 class UserProfileAdmin(admin.ModelAdmin):
@@ -72,3 +73,17 @@ class EmployeeSalaryAdmin(admin.ModelAdmin):
 
 admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(EmployeeSalary, EmployeeSalaryAdmin)
+
+class ExtraExpenseAdmin(admin.ModelAdmin):
+    list_display = (
+        '__unicode__', 'amount', 'description', 'date'
+    )
+    search_fields = (
+        'amount', 'description',
+    )
+
+    @staticmethod
+    def amount(obj):
+        return obj.amount
+
+admin.site.register(ExtraExpense, ExtraExpenseAdmin)

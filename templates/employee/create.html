@@ -4,7 +4,7 @@
 {% block content %}
 <div class="col-md-6">
     <br>
-    <a href="{% url 'expense:expense_list' %}"><button type="button" id="empolyee" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Employee List</button></a>
+    <a href="{% url 'expense_list' %}"><button type="button" id="empolyee" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Employee List</button></a>
     <br><br><br>
     <div class="content-panel">
         <h3 class="text-center">{{ request.user.retailer_user.retailer.name }} Add Employee</h3>

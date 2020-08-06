@@ -18,7 +18,7 @@ Sales Reports (Daily, Weekly, Monthly) <br>
 Stocks Logs (Daily, Monthly) <br>
 
 ## Python Version
-2.7.10<br>
+Python 3.6 and later <br>
 
 Using Django Framework and JQuery on the Frontend
 

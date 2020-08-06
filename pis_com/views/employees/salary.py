@@ -12,9 +12,9 @@ class EmployeeSalaryView(FormView):
 
     def form_valid(self, form):
        obj=form.save()
-       obj.employee=Employee.objects.get(name=self.request.POST.get('employee_name'))
+       obj.employee=Employee.objects.get(id=self.kwargs.get('pk'))
        obj.save()
-       return HttpResponseRedirect(reverse('employee:employee_list'))
+       return HttpResponseRedirect(reverse('employee_list'))
 
     def form_invalid(self, form):
         return super(EmployeeSalaryView, self).form_invalid(form)

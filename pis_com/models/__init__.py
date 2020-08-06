@@ -12,6 +12,8 @@ from .user import UserProfile
 from .employee import Employee
 from .employeesalary import EmployeeSalary
 
+from .expense import ExtraExpense
+
 
 
 
