@@ -8,7 +8,7 @@
     <div class="content-panel">
         <h3 class="text-center"> Update Statement |{{supplier.name}}</h3>
         <div class="panel-body">
-            <form class="form-horizontal add-ledger-form" action="{% url 'supplier:update_supplier_statement' pk=object.id %}" method="post" autocomplete="off">
+            <form class="form-horizontal add-ledger-form" action="{% url 'update_supplier_statement' pk=object.id %}" method="post" autocomplete="off">
                 <div class="form-group">
                     <div class="col-sm-12">
                         {% csrf_token %}

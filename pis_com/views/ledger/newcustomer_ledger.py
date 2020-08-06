@@ -22,7 +22,7 @@ class AddLedger(FormView):
         print('+++++++++++++++++++++++++++++++++')
         ledger = form.save()
         return HttpResponseRedirect(
-            reverse('ledger:customer_ledger_detail', kwargs={
+            reverse('customer_ledger_detail', kwargs={
                 'customer_id': self.kwargs.get('customer_id')
             })
         )
