@@ -4,12 +4,12 @@
 {% block content %}
 <div class="col-md-6">
     <br>
-    <a href="{% url 'ledger:customer_ledger_detail' customer_id=customer.id%}"><button type="button" id="back-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Customer Ledger Details</button></a>
+    <a href="{% url 'customer_ledger_detail' customer_id=customer.id%}"><button type="button" id="back-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Customer Ledger Details</button></a>
     <br><br><br>
     <div class="content-panel">
         <h3 class="text-center">{{ customer.customer_name }} <small>Payment</small></h3>
         <div class="panel-body">
-            <form class="form-horizontal add-payment" action="{% url 'ledger:payment_ledger' customer_id=customer.id %}" method="post" autocomplete="off">
+            <form class="form-horizontal add-payment" action="{% url 'payment_ledger' customer_id=customer.id %}" method="post" autocomplete="off">
                 <div class="form-group">
                     <div class="col-sm-12">
                         {% csrf_token %}

@@ -4,9 +4,9 @@
 
 {% block content %}
 <br>
-<a href="{% url 'ledger:customer_ledger_list'%}"><button type="button" id="back-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Ledger List</button></a>
-<a href="{% url 'ledger:add_ledger' customer_id=customer.id %}"><button type="button" id="ledger-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Add New Ledger</button></a>
-<a href="{% url 'ledger:add_payment' customer_id=customer.id %}"><button type="button" id="payment-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Add payment</button></a>
+<a href="{% url 'customer_ledger_list'%}"><button type="button" id="back-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Ledger List</button></a>
+<a href="{% url 'add_ledger' customer_id=customer.id %}"><button type="button" id="ledger-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Add New Ledger</button></a>
+<a href="{% url 'add_payment' customer_id=customer.id %}"><button type="button" id="payment-customer" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Add payment</button></a>
 <br><br><br>
 <div class="container-fluid">
     <div class="row">

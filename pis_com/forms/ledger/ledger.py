@@ -7,4 +7,3 @@ class LedgerForm(forms.ModelForm):
     class Meta:
         model = Ledger
         fields = "__all__"
-
