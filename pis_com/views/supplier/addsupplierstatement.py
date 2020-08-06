@@ -30,9 +30,8 @@ class AddSupplierStatement(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(AddSupplierStatement, self).get_context_data(**kwargs)
-        supplier = (
-            Supplier.objects.get(id=self.kwargs.get('pk'))
-        )
+        supplier = Supplier.objects.get(id=self.kwargs.get('pk'))
+
         context.update({
             'supplier': supplier
         })

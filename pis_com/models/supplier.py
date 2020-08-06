@@ -8,7 +8,7 @@ class Supplier(models.Model):
     phone = models.CharField(max_length=100, null=True, blank=True)
     mobile_no = models.CharField(max_length=100, null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def supplier_remaining_amount(self):
