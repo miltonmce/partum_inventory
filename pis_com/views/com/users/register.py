@@ -2,8 +2,9 @@ from django.views.generic import FormView
 from django.contrib.auth import forms as auth_forms
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from pis_retailer.forms import RetailerForm, RetailerUserForm
-from pis_retailer.models import RetailerUser
+from pis_com.forms.retailer.retailer import RetailerForm
+from pis_com.forms.retailer.retaileruser import RetailerUserForm
+from pis_com.models import RetailerUser
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 
@@ -50,7 +51,7 @@ class RegisterView(FormView):
         auth_user = authenticate(username=username, password=raw_password)
         auth_login(self.request, auth_user)
 
-        return HttpResponseRedirect(reverse('ledger:customer_ledger_list'))
+        return HttpResponseRedirect(reverse('customer_ledger_list'))
 
     def form_invalid(self, form):
         return super(RegisterView, self).form_invalid(form)

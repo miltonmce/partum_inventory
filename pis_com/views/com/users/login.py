@@ -18,7 +18,7 @@ class LoginView(FormView):
                     self.request.user.retailer_user.ROLE_TYPE_LEDGER_VIEW
             ):
                 return HttpResponseRedirect(
-                    reverse('ledger:customer_ledger_list'))
+                    reverse('customer_ledger_list'))
 
             return HttpResponseRedirect(reverse('index'))
 

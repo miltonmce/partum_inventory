@@ -16,6 +16,8 @@ from .expense import ExtraExpense
 
 from .ledger import Ledger
 
+from .retailer import Retailer
+from .retaileruser import RetailerUser
 
 
 

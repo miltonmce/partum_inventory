@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class FeedBack(models.Model):
     retailer = models.ForeignKey(
-        'pis_retailer.Retailer',
+        'pis_com.Retailer',
         related_name='retailer_feedback', null=True, blank=True,
         on_delete=models.CASCADE
     )

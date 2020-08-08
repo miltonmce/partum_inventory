@@ -17,6 +17,7 @@ from .views.employees import urlpatterns as employeeurls
 from .views.expense import urlpatterns as expenseurls
 from .views.ledger import urlpatterns as ledgerurls
 from .views.supplier import urlpatterns as supplierurls
+from .views.retailer import urlpatterns as retailerurls
 urlpatterns = [
     re_path(r'^$', HomePageView.as_view(), name='index'),
     re_path(r'^reports/$', ReportsView.as_view(), name='reports'),
@@ -31,4 +32,4 @@ urlpatterns = [
     re_path(r'^customers/$', CustomerUpdateView.as_view(), name='update_customer'),
     re_path(r'^customer/(?P<pk>\d+)/update$', RegisterView.as_view(), name='register'),
     re_path(r'^register/$', CreateFeedBack.as_view(), name='create_feedback'),
-] + employeeurls + expenseurls + ledgerurls + supplierurls
+] + employeeurls + expenseurls + ledgerurls + supplierurls + retailerurls

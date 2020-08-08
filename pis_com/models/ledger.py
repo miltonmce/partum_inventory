@@ -5,7 +5,7 @@ from pis_com.models import DatedModel
 
 class Ledger(DatedModel):
     retailer = models.ForeignKey(
-        'pis_retailer.Retailer', related_name='retailer_ledger', blank=True, null=True,on_delete=models.CASCADE)
+        'pis_com.Retailer', related_name='retailer_ledger', blank=True, null=True,on_delete=models.CASCADE)
     customer = models.ForeignKey(
         'pis_com.Customer', related_name='customer_ledger',on_delete=models.CASCADE
     )

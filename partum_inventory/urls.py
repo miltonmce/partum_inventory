@@ -22,7 +22,7 @@ from django.conf import settings
 urlpatterns = [
     re_path(r'^', include('pis_com.urls')),
     re_path(r'^product/', include(('pis_product.urls', 'product'),namespace='product'),),
-    re_path(r'^retailer/', include(('pis_retailer.urls', 'retailer'), namespace='retailer')),
+    #re_path(r'^retailer/', include(('pis_retailer.urls', 'retailer'), namespace='retailer')),
     re_path(r'^sales/', include(('pis_sales.urls', 'sales'), namespace='sales')),
     #re_path(r'^ledger/', include(('pis_ledger.urls','ledger'), namespace='ledger')),
     #re_path(r'^expense/', include(('pis_expense.urls','expense'), namespace='expense')),

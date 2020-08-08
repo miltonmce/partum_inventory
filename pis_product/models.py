@@ -26,7 +26,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100, unique=True)
     brand_name = models.CharField(max_length=200, blank=True, null=True)
     retailer = models.ForeignKey(
-        'pis_retailer.Retailer',
+        'pis_com.Retailer',
         related_name='retailer_product',on_delete=models.CASCADE
     )
     bar_code = models.CharField(max_length=13, unique=True, blank=True,
@@ -201,7 +201,7 @@ class PurchasedProduct(DatedModel):
 
 class ExtraItems(DatedModel):
     retailer = models.ForeignKey(
-        'pis_retailer.Retailer', related_name='retailer_extra_items',on_delete=models.CASCADE
+        'pis_com.Retailer', related_name='retailer_extra_items',on_delete=models.CASCADE
     )
     item_name = models.CharField(
         max_length=100, blank=True, null=True)

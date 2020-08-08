@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pis_com',
     #'pis_ledger',
-    'pis_retailer',
+    #'pis_retailer',
     'pis_product',
     'pis_sales',
     #'pis_expense',

@@ -3,7 +3,7 @@ from django.db import models
 
 class Customer(models.Model):
     retailer = models.ForeignKey(
-        'pis_retailer.Retailer',
+        'pis_com.Retailer',
         related_name='retailer_customer',
         on_delete=models.CASCADE
     )
