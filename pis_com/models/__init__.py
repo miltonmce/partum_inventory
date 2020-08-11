@@ -30,7 +30,7 @@ from .extraitems import ExtraItems
 from .claimedproduct import ClaimedProduct
 from .stockout import StockOut
 
-
+from .saleshistory import SalesHistory
 
 
 
@@ -126,3 +126,22 @@ def purchase_product(sender, instance, created, **kwargs):
         item = product_items[0]
         item.available_item - 1
         item.save()
+
+
+# Signals Function
+def create_save_receipt_no(sender, instance, created, **kwargs):
+    if created and not instance.receipt_no:
+        while True:
+            random_code = random.randint(1000000, 9999999)
+            if (
+                not SalesHistory.objects.filter(
+                    receipt_no=random_code).exists()
+            ):
+                break
+
+        instance.receipt_no = random_code
+        instance.save()
+
+
+# Signal Calls
+post_save.connect(create_save_receipt_no, sender=SalesHistory)

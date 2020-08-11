@@ -8,7 +8,7 @@ class PurchasedProduct(DatedModel):
         Product, related_name='purchased_product',on_delete=models.CASCADE
     )
     invoice = models.ForeignKey(
-        'pis_sales.SalesHistory', related_name='purchased_invoice',
+        'pis_com.SalesHistory', related_name='purchased_invoice',
         blank=True, null=True,on_delete=models.CASCADE
     )
     quantity = models.DecimalField(

@@ -9,6 +9,7 @@ from pis_com.models import ExtraExpense
 from pis_com.models import Ledger
 from pis_com.models.retailer import Retailer
 from pis_com.models.retaileruser import RetailerUser
+from pis_com.models.saleshistory import SalesHistory
 from pis_com.models.supplier import Supplier
 from pis_com.models.supplierstatement import SupplierStatement
 
@@ -297,3 +298,30 @@ admin.site.register(ExtraItems, ExtraItemsAdmin)
 admin.site.register(ClaimedProduct, ClaimedProductAdmin)
 admin.site.register(StockIn, StockInAdmin)
 admin.site.register(StockOut, StockOutAdmin)
+
+
+class SalesHistoryAdmin(admin.ModelAdmin):
+    list_display = (
+        '__unicode__', 'customer_name', 'customer_phone',
+        'receipt_no', 'created_at'
+    )
+    search_fields = (
+        'retailer__name', 'customer__customer_name',
+        'customer__customer_phone', 'receipt_no'
+    )
+    raw_id_fields = ('retailer', 'customer')
+
+    @staticmethod
+    def customer_name(obj):
+        return obj.customer.customer_name if obj.customer else ''
+
+    @staticmethod
+    def customer_phone(obj):
+        return obj.customer.customer_phone if obj.customer else ''
+
+    @staticmethod
+    def retailer(obj):
+        return obj.retailer.name
+
+
+admin.site.register(SalesHistory, SalesHistoryAdmin)

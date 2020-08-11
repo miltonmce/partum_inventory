@@ -10,7 +10,7 @@ class StockOut(models.Model):
         Product, related_name='stockout_product',on_delete=models.CASCADE
     )
     invoice = models.ForeignKey(
-        'pis_sales.SalesHistory', related_name='out_invoice',
+        'pis_com.SalesHistory', related_name='out_invoice',
         blank=True, null=True,on_delete=models.CASCADE
     )
     purchased_item = models.ForeignKey(

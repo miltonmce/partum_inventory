@@ -10,7 +10,7 @@ class Ledger(DatedModel):
         'pis_com.Customer', related_name='customer_ledger',on_delete=models.CASCADE
     )
     invoice = models.ForeignKey(
-        'pis_sales.SalesHistory', related_name='ledger_invoice',
+        'pis_com.SalesHistory', related_name='ledger_invoice',
         blank=True, null=True,on_delete=models.CASCADE
     )
     person=models.CharField(max_length=200, default='customer', blank=True, null=True)

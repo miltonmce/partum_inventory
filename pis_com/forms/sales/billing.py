@@ -1,6 +1,6 @@
 from django import forms
 
-from pis_sales.models import SalesHistory
+from pis_com.models.saleshistory import SalesHistory
 
 
 class BillingForm(forms.ModelForm):
