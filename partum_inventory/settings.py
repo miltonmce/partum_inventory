@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'pis_com',
     #'pis_ledger',
     #'pis_retailer',
-    'pis_product',
+    #'pis_product',
     'pis_sales',
     #'pis_expense',
     #'pis_employees',

@@ -3,8 +3,8 @@
 {% block content %}
     <div class="col-md-12">
         <br>
-        <a href="{% url 'product:stock_out_items' product_id=product.id %}"><button type="button" id="stock-out" class="btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Stock Out</button></a>
-        <a href="{% url 'product:stock_items_list' %}"><button type="button" id="add-product" class="btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Products List</button></a>
+        <a href="{% url 'stock_out_items' product_id=product.id %}"><button type="button" id="stock-out" class="btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Stock Out</button></a>
+        <a href="{% url 'stock_items_list' %}"><button type="button" id="add-product" class="btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Products List</button></a>
         <br><br><br>
         <div class="content-panel table-responsive">
             <h1 class="text-center">{{ product.name|title }} <small>{{ product.brand_name|title }}</small> | Stock Out</h1><br>
@@ -31,8 +31,8 @@
             {% if paginator.page_range|length > 1 %}
                 <div class="text-center">
                     <ul class="pagination">
-                        <li><a  style="background-color: #3070A8; color: white" class="page_previous" href="{% if page_obj.has_previous %}{% url 'product:stockout_list' product_id=product.id %}?page={{ page_obj.previous_page_number }}{% else %}#{% endif %}" title="Previous"><<</a></li>
-                        <li><a style="background-color: #3070A8; color: white" class="page_next" href="{% if page_obj.has_next %}{% url 'product:stockout_list' product_id=product.id %}?page={{ page_obj.next_page_number }}{% else %}#{% endif %}" title="Next">>></a></li>
+                        <li><a  style="background-color: #3070A8; color: white" class="page_previous" href="{% if page_obj.has_previous %}{% url 'stockout_list' product_id=product.id %}?page={{ page_obj.previous_page_number }}{% else %}#{% endif %}" title="Previous"><<</a></li>
+                        <li><a style="background-color: #3070A8; color: white" class="page_next" href="{% if page_obj.has_next %}{% url 'stockout_list' product_id=product.id %}?page={{ page_obj.next_page_number }}{% else %}#{% endif %}" title="Next">>></a></li>
                     </ul>
                 </div>
             {% endif %}

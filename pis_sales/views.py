@@ -9,16 +9,17 @@ from django.utils.decorators import method_decorator
 from django.views.generic import FormView, DeleteView, View, TemplateView, ListView
 from django.utils import timezone
 from django.urls import reverse, reverse_lazy
-from pis_product.models import Product
+from pis_com.models import Product
 from pis_sales.models import SalesHistory
-from pis_product.forms import PurchasedProductForm
+from pis_com.forms.product.purchasedproduct import PurchasedProductForm
 from pis_sales.forms import BillingForm
-from pis_product.forms import ExtraItemForm, StockOutForm
+from pis_com.forms.product.extraitem import ExtraItemForm
+from pis_com.forms.product.stockout import StockOutForm
 from pis_com.forms.customer.customer import CustomerForm
 from pis_com.models import Ledger
 from pis_com.forms.ledger.ledger import LedgerForm
 from django.db import transaction
-from pis_product.models import PurchasedProduct, StockOut
+from pis_com.models import PurchasedProduct, StockOut
 from pis_com.models import Customer
 
 

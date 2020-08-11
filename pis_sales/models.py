@@ -27,12 +27,12 @@ class SalesHistory(DatedModel):
         help_text='Quantity and Product name would save in JSON format')
 
     purchased_items = models.ManyToManyField(
-        'pis_product.PurchasedProduct',
+        'pis_com.PurchasedProduct',
         max_length=100, blank=True
     )
 
     extra_items = models.ManyToManyField(
-        'pis_product.ExtraItems',
+        'pis_com.ExtraItems',
         max_length=200, blank=True,
     )
 

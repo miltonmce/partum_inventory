@@ -5,8 +5,8 @@
 {% block content %}
     <div class="col-md-6">
         <br>
-        <a href="{% url 'product:add_product' retailer_id=request.user.retailer_user.retailer.id %}"><button type="button" id="add-product" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Add Product </button></a>
-        <a href="{% url 'product:stock_items_list' %}"><button type="button" id="back-product" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Product List</button></a>
+        <a href="{% url 'add_product' retailer_id=request.user.retailer_user.retailer.id %}"><button type="button" id="add-product" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Add Product </button></a>
+        <a href="{% url 'stock_items_list' %}"><button type="button" id="back-product" class="btn btn-primary" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Processing">Product List</button></a>
         <br><br><br>
         <div class="content-panel">
             <h3 class="text-center">Claimed items</h3>
@@ -91,14 +91,14 @@
             var customer_val = $('.customer').val();
             var customer_id = $('#customer-list [value="' + customer_val + '"]').data('id');
 
-            $.post('{% url "product:claimed_items" %}', {
-                product: product_id,
+            $.post('{% url "claimed_items" %}', {
+                 product_id,
                 claimed_items: $('.claimed_items').val(),
                 customer: customer_id,
                 claimed_amount: $('.claimed_amount').val(),
                 csrfmiddlewaretoken: '{{ csrf_token }}'
             }, function (result, status) {
-                window.location.href = '{% url "product:items_list" %}';
+                window.location.href = '{% url "items_list" %}';
             });
         });
 
