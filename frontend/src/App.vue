@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire">
-    <SideBar></SideBar>
     <NavBar></NavBar>
     <v-main>
       <router-view></router-view>
@@ -13,14 +12,12 @@
 
 <script>
 import NavBar from "./components/navbar/NavBar";
-import SideBar from "@/components/sidebar/SideBar";
 export default {
   props: {
     source: String,
   },
   components: {
     NavBar,
-    SideBar,
   },
   data: () => ({
     drawer: null,

@@ -12,6 +12,7 @@ import DjangoApp from "@/components/sidebar/DjangoApp";
 export default {
   name: "SideBar",
   components: { DjangoApp },
+  props: ["drawer"],
   data() {
     return {
       djangoapps: [
